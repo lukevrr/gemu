@@ -62,7 +62,9 @@
 		var blob = new Blob([byteArray], {type: ""});
 		var objectUrl = URL.createObjectURL(blob);
 		return objectUrl;
-		setUrl(objectUrl);
+		var ugh = objectUrl.split(":")[1];
+		console.log(ugh);
+		setUrl(ugh);
 	}
 	
 </script>
