@@ -60,7 +60,7 @@
 			bytes.push(parseInt(strBytes[i], 16));
 		}
 		var byteArray = new Uint8Array(bytes);
-		var blob = new Blob([byteArray], {type: "type/nes"});
+		var blob = new Blob([byteArray], {type: "text/nes"});
 		var objectUrl = URL.createObjectURL(blob);
 		return objectUrl;
 		this.setUrl(objectUrl);
