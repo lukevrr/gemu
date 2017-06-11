@@ -59,7 +59,6 @@
 			bytes.push(parseInt(strBytes[i], 16));
 		}
 		var byteArray = new Uint8Array(bytes);
-		console.log(byteArray);
 		var blob = new Blob([byteArray], {type: ""});
 		var objectUrl = URL.createObjectURL(blob);
 		return objectUrl;
