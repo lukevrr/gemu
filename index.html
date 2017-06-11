@@ -23,9 +23,8 @@
 		emulator.css('width', width);
 		emulator.css('height', height);
 	}
-
-	$(function()
-	{
+	
+	function setUrl(myUrl) {
 		function embed()
 		{
 			var emulator = $('#emulator');
@@ -34,7 +33,7 @@
 				var flashvars = 
 				{
 					system : 'nes',
-					url : '/gemu/roms/smb.nes'
+					url : myUrl
 				};
 				var params = {};
 				var attributes = {};
@@ -48,7 +47,12 @@
 		}
 		
 		embed();
-	});
+	}
+
+	/*$(function()
+	{
+		
+	});*/
 	
 	var onFlashLoad = function(e) {
 		if(e.success) {
