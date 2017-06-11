@@ -39,11 +39,19 @@
 				params.allowFullScreen = 'true';
 				params.allowFullScreenInteractive = 'true';
 				
-				swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes);
+				swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes, onFlashLoad);
 			}
 		}
 		
 		embed();
 	});
+	
+	var onFlashLoad = function(e) {
+		if(e.success) {
+			var flObj = document.getElementsByTagName("object")[0];
+			flObj.tabIndex = 1234;
+			flObj.focus();
+		}
+	}
 	
 </script>
