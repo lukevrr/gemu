@@ -46,7 +46,7 @@
 
 			swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes, onFlashLoad);
 		}*/
-		emulator.children[0].innerHTML = romBytes;
+		emulator.childNodes[0].innerHTML = romBytes;
 	}
 	
 	var onFlashLoad = function(e) {
