@@ -62,24 +62,8 @@
 		console.log(byteArray);
 		var blob = new Blob([byteArray], {type: ""});
 		var objectUrl = URL.createObjectURL(blob);
-		console.log(objectUrl);
-		var a = document.createElement("a");
-		document.body.appendChild(a);
-		a.href = objectUrl;
-		a.download = "testing.nes";
-		a.click();
-	}
-	
-	function parseHexString(str) { 
-	    var result = [];
-	    while (str.length >= 2) { 
-		result.push(parseInt(str.substring(0, 2), 16));
-
-		str = str.substring(2, str.length);
-	    }
-
-	    return result;
-		console.log(result);
+		return objectUrl;
+		setUrl(objectUrl);
 	}
 	
 </script>
