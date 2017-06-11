@@ -43,11 +43,6 @@
 			swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes, onFlashLoad);
 		}
 	}
-
-	/*$(function()
-	{
-		
-	});*/
 	
 	var onFlashLoad = function(e) {
 		if(e.success) {
@@ -55,6 +50,17 @@
 			flObj.tabIndex = 1234;
 			flObj.focus();
 		}
+	}
+	
+	function getFileFromByteArray(string byteString) {
+		var strBytes = byteString.split(" ");
+		var bytes = [];
+		for(i = 0; i < strBytes.length; i++) {
+			bytes[i] = parseInt(strBytes[i], 10);
+		}
+		var blob = new Blob([bytes], {type: ""});
+		var objectUrl = URL.createObjectURL(blob);
+		console.log(blob);
 	}
 	
 </script>
