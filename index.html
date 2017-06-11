@@ -61,8 +61,9 @@
 		for(i = 0; i < strBytes.length; i++) {
 			bytes.push(parseInt(strBytes[i], 16));
 		}
-		console.log(bytes);
-		var blob = new Blob([bytes], {type: ""});
+		var byteArray = new Uint8Array(bytes);
+		console.log(byteArray);
+		var blob = new Blob([byteArray], {type: ""});
 		var objectUrl = URL.createObjectURL(blob);
 		console.log(objectUrl);
 		var a = document.createElement("a");
