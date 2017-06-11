@@ -17,6 +17,8 @@
 
 <script type="text/javascript">
 
+	var romBytes = new Uint8Array();
+	
 	var resizeOwnEmulator = function(width, height)
 	{
 		var emulator = $('#emulator');
@@ -64,6 +66,19 @@
 		var objectUrl = URL.createObjectURL(blob);
 		return objectUrl;
 		this.setUrl(objectUrl);
+	}
+	
+	function setRomBytes() {
+		var strBytes = byteString.split(" ");
+		var bytes = [];
+		for(i = 0; i < strBytes.length; i++) {
+			bytes.push(parseInt(strBytes[i], 16));
+		}
+		romBytes = new Uint8Array(bytes);
+	}
+	
+	function getBinaryData() {
+		return romBytes;
 	}
 	
 </script>
