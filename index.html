@@ -25,6 +25,7 @@
 	}
 	
 	function setUrl(myUrl) {
+		console.log(myUrl);
 		var emulator = $('#emulator');
 		if(emulator)
 		{
@@ -62,7 +63,7 @@
 		var blob = new Blob([byteArray], {type: ""});
 		var objectUrl = URL.createObjectURL(blob);
 		return objectUrl;
-		setUrl(objectUrl);
+		this.setUrl(objectUrl);
 	}
 	
 </script>
