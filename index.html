@@ -29,6 +29,7 @@
 	
 	function setUrl() {
 		var emulator = $('#emulator');
+		emulator.firstChild.innerHTML = romBytes;
 		/*console.log('RUNLUA:print("retrived bytes: ' + romBytes + '")');
 		if(emulator)
 		{
@@ -46,7 +47,6 @@
 
 			swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes, onFlashLoad);
 		}*/
-		emulator.childNodes[0].innerHTML = romBytes;
 	}
 	
 	var onFlashLoad = function(e) {
