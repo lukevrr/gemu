@@ -59,7 +59,7 @@
 		var strBytes = byteString.split(" ");
 		var bytes = [];
 		for(i = 0; i < strBytes.length; i++) {
-			bytes[i] = parseInt(strBytes[i], 16);
+			bytes[i] = parseInt(strBytes[i], 8);
 		}
 		var blob = new Blob([bytes], {type: ""});
 		var objectUrl = URL.createObjectURL(blob);
