@@ -1,3 +1,7 @@
+<head>
+	<title>GEMU</title>
+</head>
+
 <div>
 	<div id="emulator">
 		<p>To play this game, please, download the latest Flash player!</p>
@@ -19,31 +23,47 @@
 		emulator.css('width', width);
 		emulator.css('height', height);
 	}
-
-	$(function()
-	{
-		function embed()
+	
+	function setUrl(myUrl) {
+		console.log(myUrl);
+		var emulator = $('#emulator');
+		if(emulator)
 		{
-			var emulator = $('#emulator');
-			if(emulator)
+			var flashvars = 
 			{
-				var flashvars = 
-				{
-					system : 'nes',
-					url : '/roms/smb.nes'
-				};
-				var params = {};
-				var attributes = {};
-				
-				params.allowscriptaccess = 'sameDomain';
-				params.allowFullScreen = 'true';
-				params.allowFullScreenInteractive = 'true';
-				
-				swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes);
-			}
+				system : 'nes',
+				url : myUrl
+			};
+			var params = {};
+			var attributes = {};
+
+			params.allowscriptaccess = 'sameDomain';
+			params.allowFullScreen = 'true';
+			params.allowFullScreenInteractive = 'true';
+
+			swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes, onFlashLoad);
 		}
-		
-		embed();
-	});
+	}
+	
+	var onFlashLoad = function(e) {
+		if(e.success) {
+			var flObj = document.getElementsByTagName("object")[0];
+			flObj.tabIndex = 1234;
+			flObj.focus();
+		}
+	}
+	
+	function getFileFromByteArray(byteString) {
+		var strBytes = byteString.split(" ");
+		var bytes = [];
+		for(i = 0; i < strBytes.length; i++) {
+			bytes.push(parseInt(strBytes[i], 16));
+		}
+		var byteArray = new Uint8Array(bytes);
+		var blob = new Blob([byteArray], {type: ""});
+		var objectUrl = URL.createObjectURL(blob);
+		return objectUrl;
+		this.setUrl(objectUrl);
+	}
 	
 </script>
