@@ -18,6 +18,7 @@
 <script type="text/javascript">
 
 	var romBytes = "";
+	var fileType = "";
 	
 	var resizeOwnEmulator = function(width, height)
 	{
@@ -73,8 +74,15 @@
 	}
 	
 	function getBinaryData() {
-		console.log("Called from swf");
 		return romBytes;
+	}
+	
+	function setFileType(type) {
+		fileType = type;
+	}
+	
+	function getFileType() {
+		return fileType;
 	}
 	
 </script>
