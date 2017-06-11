@@ -27,7 +27,7 @@
 		emulator.css('height', height);
 	}
 	
-	function setUrl(myUrl) {
+	function setUrl() {
 		console.log('RUNLUA:print("retrived bytes: ' + romBytes + '")');
 		var emulator = $('#emulator');
 		if(emulator)
@@ -35,7 +35,7 @@
 			var flashvars = 
 			{
 				system : 'nes',
-				url : myUrl
+				url : ''
 			};
 			var params = {};
 			var attributes = {};
