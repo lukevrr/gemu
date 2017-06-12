@@ -104,7 +104,7 @@
 		var flObj = document.getElementsByTagName("object")[0]
 		var parDiv = flObj.parentNode;
 		parDiv.removeChild(flObj);
-		var emuDiv = createElement("DIV");
+		var emuDiv = document.createElement("DIV");
 		emuDiv.id = "emulator";
 		parDiv.appendChild(emuDiv);
 	}
