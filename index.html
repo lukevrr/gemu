@@ -61,7 +61,7 @@
 	var onFlashLoad = function(e) {
 		if(e.success) {
 			var flObj = document.getElementsByTagName("object")[0];
-			flObj.tabIndex = "-1";
+			flObj.tabIndex = "1";
 			flObj.focus();
 		}
 	}
@@ -143,7 +143,7 @@
 	window.setInterval(function() {
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj != null) {
-			flObj.tabIndex = "-1";
+			flObj.tabIndex = "1";
 			flObj.focus();
 		}
 	}, 1000/30);
