@@ -27,6 +27,7 @@
 
 	var romBytes = "";
 	var fileType = "";
+	var saveState = "";
 	
 	var resizeOwnEmulator = function(width, height)
 	{
@@ -107,6 +108,10 @@
 			emuDiv.id = "emulator";
 			parDiv.appendChild(emuDiv);
 		}
+	}
+	
+	function saveState(str) {
+		saveState = str;
 	}
 	
 	window.setInterval(function() {
