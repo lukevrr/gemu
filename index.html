@@ -119,6 +119,7 @@
 	function saveGameState() {
 		var flObj = document.getElementsByTagName("object")[0];
 		flObj.saveFlashState();
+		console.log("SAVED GAME STATE");
 		console.log('RUNLUA:WriteSaveStateFile("' + getSaveState() + '")');
 	}
 	
