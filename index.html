@@ -28,6 +28,7 @@
 	var romBytes = "";
 	var fileType = "";
 	var saveState = "";
+	var loadState = "";
 	
 	var resizeOwnEmulator = function(width, height)
 	{
@@ -125,6 +126,14 @@
 			getSaveState();
 		else
 			return saveState;
+	}
+	
+	function setLoadState(str) {
+		loadState = str;
+	}
+	
+	function getLoadState() {
+		return loadState;
 	}
 	
 	window.setInterval(function() {
