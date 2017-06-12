@@ -113,12 +113,15 @@
 	function setSaveState(str) {
 		saveState = str;
 		console.log("Saved state");
-		return str;
 	}
 	
 	function saveGameState() {
 		var flObj = document.getElementsByTagName("object")[0];
 		flObj.saveFlashState();
+	}
+	
+	function getSaveState() {
+		return saveState;
 	}
 	
 	window.setInterval(function() {
