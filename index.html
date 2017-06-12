@@ -121,7 +121,10 @@
 	}
 	
 	function getSaveState() {
-		return saveState;
+		if(saveState == "")
+			getSaveState();
+		else
+			return saveState;
 	}
 	
 	window.setInterval(function() {
