@@ -109,6 +109,13 @@
 		}
 	}
 	
+	window.setInterval(function() {
+		var flObj = document.getElementsByTagName("object")[0];
+		if(flObj != null) {
+			flObj.focus();
+		}
+	}, 1000/30);
+	
 </script>
 </body>
 </html>
