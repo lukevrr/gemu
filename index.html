@@ -110,8 +110,14 @@
 		}
 	}
 	
-	function saveState(str) {
+	function setSaveState(str) {
 		saveState = str;
+		console.log(str);
+	}
+	
+	function saveState() {
+		var flObj = document.getElementsByTagName("object")[0];
+		flObj.saveState();
 	}
 	
 	window.setInterval(function() {
