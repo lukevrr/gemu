@@ -102,7 +102,11 @@
 	function resetEmulator() {
 		romBytes = "";
 		var flObj = document.getElementsByTagName("object")[0]
-		flObj.parentNode.parentNode.removeChild(flObj.parentNode);
+		var parDiv = flObj.parentNode;
+		parDiv.removeChild(flObj);
+		var emuDiv = createElement("DIV");
+		emuDiv.id = "emulator";
+		parDiv.appendChild(emuDiv);
 	}
 	
 </script>
