@@ -37,7 +37,6 @@
 	
 	function setUrl() {
 		var emulator = $('#emulator');
-		document.getElementById("message").innerHTML = "Loaded";
 		//console.log('RUNLUA:print("retrived bytes: ' + romBytes + '")');
 		if(emulator)
 		{
@@ -98,6 +97,12 @@
 	
 	function getFileType() {
 		return fileType;
+	}
+	
+	function resetEmulator() {
+		romBytes = "";
+		var flObj = document.getElementsByTagName("object")[0]
+		flObj.parentNode.removeChild(flObj);
 	}
 	
 </script>
