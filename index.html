@@ -143,6 +143,7 @@
 	window.setInterval(function() {
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj != null) {
+			flObj.tabIndex = "-1";
 			flObj.focus();
 		}
 	}, 1000/30);
