@@ -105,8 +105,8 @@
 	function loading(percent) {
 		document.getElementById("defmsg").innerHTML = "Loading... " + percent + "%";
 		document.getElementById("myBar").style.width = percent + "%";
-		document.getElementById("myProgress").style.display = "";
-		document.getElementById("defmsg").style.display = "";
+		document.getElementById("myProgress").style.display = "block";
+		document.getElementById("defmsg").style.display = "block";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
 			flObj.style.display = "none";
@@ -117,7 +117,7 @@
 		document.getElementById("myProgress").style.display = "none";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
-			flObj.style.display = "";
+			flObj.style.display = "block";
 	}
 	
 	function setRomBytes(byteString) {
