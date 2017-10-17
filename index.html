@@ -16,12 +16,23 @@
 		#defmsg {
 			margin-top:10%;
 		}
+		#myProgress {
+			width:50;
+		}
+		#myBar {
+			width:1%;
+		}
 	</style>
 </head>
 <body>
 <div>
-	<center><p id="defmsg">To run GEMU, you must have the Adobe NPAPI plugin installed on your computer!<br>
-		Download here: https://goo.gl/eymjZM</p></center>
+	<center>
+		<p id="defmsg">To run GEMU, you must have the Adobe NPAPI plugin installed on your computer!<br>
+		Download here: https://goo.gl/eymjZM</p>
+		<div id="myProgress">
+			<div id="myBar"></div>
+		</div>
+	</center>
 	<div id="emulator">
 		
 	</div>
@@ -89,7 +100,7 @@
 	
 	function loading(percent) {
 		document.getElementById("defmsg").innerHTML = "Loading... " + percent + "%";
-		document.getElementById("defmsg").style.display = "inline-block";
+		document.getElementById("defmsg").style.display = "inline";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
 			flObj.style.display = "none";
@@ -99,7 +110,7 @@
 		document.getElementById("defmsg").style.display = "none";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
-			flObj.style.display = "inline-block";
+			flObj.style.display = "inline";
 	}
 	
 	function setRomBytes(byteString) {
