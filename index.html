@@ -83,12 +83,14 @@
 	function loading(percent) {
 		document.getElementById("defmsg").innerHTML = "Loading... " + percent + "%";
 		var flObj = document.getElementsByTagName("object")[0];
-		flObj.style.display = "none";
+		if(flObj)
+			flObj.style.display = "none";
 	}
 	
 	function loaded() {
 		var flObj = document.getElementsByTagName("object")[0];
-		flObj.style.display = "inline-block";
+		if(flObj)
+			flObj.style.display = "inline-block";
 	}
 	
 	function setRomBytes(byteString) {
