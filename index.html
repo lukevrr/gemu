@@ -15,9 +15,10 @@
 </head>
 <body>
 <div>
-	<div id="emulator">
-		<p id="defmsg">To run GEMU, you must have the Adobe NPAPI plugin installed on your computer!<br>
+	<p id="defmsg">To run GEMU, you must have the Adobe NPAPI plugin installed on your computer!<br>
 			Download here: https://get.adobe.com/flashplayer/otherversions/</p>
+	<div id="emulator">
+		
 	</div>
 </div>
 
@@ -82,12 +83,14 @@
 	
 	function loading(percent) {
 		document.getElementById("defmsg").innerHTML = "Loading... " + percent + "%";
+		document.getElementById("defmsg").style.display = "inline-block";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
 			flObj.style.display = "none";
 	}
 	
 	function loaded() {
+		document.getElementById("defmsg").style.display = "none";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
 			flObj.style.display = "inline-block";
