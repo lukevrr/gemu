@@ -19,6 +19,7 @@
 		#myProgress {
 			width:50%;
 			background-color:gray;
+			display:none;
 		}
 		#myBar {
 			width:1%;
@@ -104,6 +105,7 @@
 	function loading(percent) {
 		document.getElementById("defmsg").innerHTML = "Loading... " + percent + "%";
 		document.getElementById("myBar").style.width = percent + "%";
+		document.getElementById("myProgress").style.display = "";
 		document.getElementById("defmsg").style.display = "";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
@@ -112,6 +114,7 @@
 	
 	function loaded() {
 		document.getElementById("defmsg").style.display = "none";
+		document.getElementById("myProgress").style.display = "none";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
 			flObj.style.display = "";
