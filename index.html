@@ -16,7 +16,7 @@
 <body>
 <div>
 	<div id="emulator">
-		<p>To run GEMU, you must have the Adobe NPAPI plugin installed on your computer!
+		<p id="defmsg">To run GEMU, you must have the Adobe NPAPI plugin installed on your computer!<br>
 			Download here: https://get.adobe.com/flashplayer/otherversions/</p>
 	</div>
 </div>
@@ -78,6 +78,10 @@
 		var objectUrl = URL.createObjectURL(blob);
 		return objectUrl;
 		this.setUrl(objectUrl);
+	}
+	
+	function loading() {
+		document.getElementById("defmsg").innerHTML = "Loading...";
 	}
 	
 	function setRomBytes(byteString) {
