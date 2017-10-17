@@ -80,8 +80,8 @@
 		this.setUrl(objectUrl);
 	}
 	
-	function loading() {
-		document.getElementById("defmsg").innerHTML = "Loading...";
+	function loading(percent) {
+		document.getElementById("defmsg").innerHTML = "Loading... " + percent + "%";
 		var flObj = document.getElementsByTagName("object")[0];
 		flObj.style.display = "none";
 	}
