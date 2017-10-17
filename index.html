@@ -103,6 +103,7 @@
 	
 	function loading(percent) {
 		document.getElementById("defmsg").innerHTML = "Loading... " + percent + "%";
+		document.getElementById("myBar").style.width = percent + "%";
 		document.getElementById("defmsg").style.display = "inline";
 		var flObj = document.getElementsByTagName("object")[0];
 		if(flObj)
