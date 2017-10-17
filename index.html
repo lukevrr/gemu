@@ -82,6 +82,13 @@
 	
 	function loading() {
 		document.getElementById("defmsg").innerHTML = "Loading...";
+		var flObj = document.getElementsByTagName("object")[0];
+		flObj.style.display = "none";
+	}
+	
+	function loaded() {
+		var flObj = document.getElementsByTagName("object")[0];
+		flObj.style.display = "inline-block";
 	}
 	
 	function setRomBytes(byteString) {
