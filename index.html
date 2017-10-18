@@ -138,7 +138,7 @@
 		var newBytes = "";
 		var hexchars = "0123456789abcdef";
 		for(i = 0; i < romBytes.length / 3; i+=3) {
-			if(i % amnt == 1 && i > 1 && romBytes.substring(i, i+1) != ":") {
+			if(i % amnt == 1 && i > 1) {
 				var corruptedByte = "";
 				if(method == 0) {
 					var randPointer = Math.floor(Math.random() * 15);
@@ -146,11 +146,12 @@
 					randPointer = Math.floor(Math.random() * 15);
 					corruptedByte += hexchars.substring(randPointer, randPointer+1);
 					corruptedByte += ":";
-					console.log(corruptedByte);
+					console.log(corruptedByte, i);
 					newBytes += corruptedByte;
-					
 				} else if (method == 1) {
 					
+				} else {
+					newBytes += romBytes.substring(i, i+3);
 				}
 			} else {
 				newBytes += romBytes.substring(i, i+3);
