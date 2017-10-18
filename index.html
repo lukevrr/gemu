@@ -134,16 +134,22 @@
 		romBytes += byteString;
 	}
 	
-	function corruptROM(amnt) {
+	function corruptROM(amnt, method) {
 		var newBytes = "";
 		var hexchars = "0123456789abcdef";
-		for(i = 0; i < romBytes.length; i++) {
-			if(i % amnt == 1 && i > 1) {
-				console.log("corrupted byte: " + i);
-				var randPointer = Math.floor(Math.random() * 15);
-				newBytes += hexchars.substring(randPointer, randPointer+1);
+		for(i = 0; i < romBytes.length / 3; i+=3) {
+			if(i % amnt == 1 && i > 1 && romBytes.substring(i, i+1) != ":") {
+				if(method == 0) {
+					var randPointer = Math.floor(Math.random() * 15);
+					newBytes += hexchars.substring(randPointer, randPointer+1);
+					newBytes += hexchars.substring(randPointer, randPointer+1);
+					newBytes += ":";
+				} else if (method == 1) {
+					
+				}
 			} else {
-				newBytes += romBytes.substring(i, i+1);
+				newBytes += romBytes.substring(i, i+3);
+				console.log(romBytes.substring(i, i+3));
 			}
 		}
 		romBytes = newBytes;
