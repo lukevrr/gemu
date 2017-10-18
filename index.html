@@ -134,6 +134,20 @@
 		romBytes += byteString;
 	}
 	
+	function corruptROM() {
+		var newBytes = "";
+		var hexchars = "0123456789abcdef";
+		for(i = 0; i < byteString.length; i++) {
+			if(i % 1000 == 1) {
+				var randPointer = Math.floor(Math.random() * 15);
+				newBytes += hexchars.substring(randPointer, randPointer+1);
+			} else {
+				newBytes += byteString.substring(i, i+1);
+			}
+		}
+		byteString = newBytes;
+	}
+	
 	function setRomFile(file) {
 		console.log('RUNLUA:print("File: ' + file + '")');
 	}
