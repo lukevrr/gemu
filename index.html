@@ -137,7 +137,7 @@
 	function corruptROM(amnt, method) {
 		var newBytes = "";
 		var hexchars = "0123456789abcdef";
-		for(i = 0; i < romBytes.length / 3; i+=3) {
+		for(i = 0; i < romBytes.length; i+=3) {
 			if(i % amnt == 1 && i > 1) {
 				var corruptedByte = "";
 				if(method == 0) {
