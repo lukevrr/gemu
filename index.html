@@ -151,7 +151,9 @@
 				} else if (method == 1) {
 					corruptedByte = parseInt(romBytes.substring(i, i+2), 16);
 					corruptedByte++;
-					newBytes += corruptedByte.toString(16);
+					corruptedByte = corruptedByte.toString(16);
+					if(corruptedByte.length == 1) corruptedByte = "0" + corruptedByte;
+					newBytes += corruptedByte + ":";
 				} else {
 					newBytes += romBytes.substring(i, i+3);
 				}
