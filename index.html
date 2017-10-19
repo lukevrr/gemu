@@ -149,7 +149,9 @@
 					console.log(corruptedByte, i);
 					newBytes += corruptedByte;
 				} else if (method == 1) {
-					
+					corruptedByte = parseInt(romBytes.substring(i, i+2), 16);
+					corruptedByte++;
+					newBytes += corruptedByte.toString(16);
 				} else {
 					newBytes += romBytes.substring(i, i+3);
 				}
