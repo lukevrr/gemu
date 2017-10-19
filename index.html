@@ -153,8 +153,8 @@
 					console.log(romBytes.substring(i, i+2), corruptedByte);
 					corruptedByte++;
 					corruptedByte = corruptedByte.toString(16);
-					console.log(corruptedByte);
 					if(corruptedByte.length == 1) corruptedByte = "0" + corruptedByte;
+					console.log(corruptedByte);
 					newBytes += corruptedByte + ":";
 				} else {
 					newBytes += romBytes.substring(i, i+3);
