@@ -150,8 +150,10 @@
 					newBytes += corruptedByte;
 				} else if (method == 1) {
 					corruptedByte = parseInt(romBytes.substring(i, i+2), 16);
+					console.log(romBytes.substring(i, i+2), corruptedByte);
 					corruptedByte++;
 					corruptedByte = corruptedByte.toString(16);
+					console.log(corruptedByte);
 					if(corruptedByte.length == 1) corruptedByte = "0" + corruptedByte;
 					newBytes += corruptedByte + ":";
 				} else {
