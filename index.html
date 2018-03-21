@@ -80,6 +80,7 @@
 			params.allowFullScreenInteractive = 'true';
 
 			swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes, onFlashLoad);
+			console.log(document.getElementById("emulator").innerHTML);
 		} else {
 			console.log("No emulator element!");
 		}
