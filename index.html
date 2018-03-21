@@ -137,12 +137,12 @@
 	
 	function setRomBytes(byteString) {
 		romBytes = byteString;
-		console.log("Set ROM bytes: " + byteString);
+		//console.log("Set ROM bytes: " + byteString);
 	}
 	
 	function addToRomBytes(byteString) {
 		romBytes += byteString;
-		
+		console.log(byteString.length);
 	}
 	
 	function corruptROM(amnt, method) {
