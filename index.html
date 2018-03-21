@@ -68,7 +68,7 @@
 	function setUrl() {
 		document.getElementById("defmsg").style.display = "none";
 		var emulator = $('#emulator');
-		console.log('RUNLUA:print("retrieved bytes: ' + romBytes + '")');
+		//console.log('RUNLUA:print("retrieved bytes: ' + romBytes + '")');
 		if(emulator)
 		{
 			var flashvars = 
@@ -84,7 +84,7 @@
 			params.allowFullScreenInteractive = 'true';
 
 			swfobject.embedSWF('flash/Nesbox.swf', 'emulator', '640', '480', '11.2.0', 'flash/expressInstall.swf', flashvars, params, attributes, onFlashLoad);
-			console.log(document.body.innerHTML);
+			//console.log(document.body.innerHTML);
 		} else {
 			console.log("No emulator element!");
 		}
